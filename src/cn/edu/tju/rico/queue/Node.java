@@ -1,8 +1,8 @@
-package cn.edu.tju.rico.stack;
+package cn.edu.tju.rico.queue;
 
 /**
  * Title: 结点类 
- * Description: 链表的基本元素
+ * Description: 线性表的基本元素
  * 
  * @author rico
  * @created 2017年4月6日 下午9:55:58
@@ -27,17 +27,8 @@ package cn.edu.tju.rico.stack;
 		this.data = data;
 	}
 
-	public T getData() {
-		return data;
-	}
-	
-	public void setData(T data) {
-		this.data = data;
-	}
-	
 	@Override
 	public String toString() {
 		return data.toString();
 	}
-
 }

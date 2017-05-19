@@ -134,6 +134,8 @@ public class LinkedStack<E> {
 		System.out.println();
 	}
 	  
+	
+	
 	/**     
 	 * @description 返回栈的大小
 	 * @author rico       
@@ -149,5 +151,17 @@ public class LinkedStack<E> {
 
 	public void setMin(LinkedStack<E> min) {
 		this.min = min;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		Node<E> index = top;
+		StringBuilder sb = new StringBuilder();
+		while (index != null) {
+			sb.append(index.data).append(" ");
+			index = index.next;
+		}
+		return sb.toString();
 	}
 }

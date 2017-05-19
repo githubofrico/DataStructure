@@ -20,6 +20,7 @@ public class LinkedStackTest {
 					return 0;
 			}
 		};
+		
 		stack.push(7,c);
 		stack.push(6,c);
 		stack.push(8,c);
