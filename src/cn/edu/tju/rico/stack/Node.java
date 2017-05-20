@@ -31,13 +31,13 @@ package cn.edu.tju.rico.stack;
 		return data;
 	}
 	
-	public void setData(T data) {
-		this.data = data;
-	}
-	
 	@Override
 	public String toString() {
 		return data.toString();
+	}
+
+	public Node<T> getNext() {
+		return next;
 	}
 
 }
