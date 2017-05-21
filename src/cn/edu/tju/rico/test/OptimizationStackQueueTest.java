@@ -19,6 +19,7 @@ public class OptimizationStackQueueTest {
 		System.out.println("\n------------------\n");
 
 		queue.put(4);
+		queue.put(5);
 		System.out.println(queue);
 		System.out.println("\n------------------\n");
 	}
