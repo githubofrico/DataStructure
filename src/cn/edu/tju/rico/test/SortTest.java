@@ -2,7 +2,9 @@ package cn.edu.tju.rico.test;
 
 import java.util.Arrays;
 
+import cn.edu.tju.rico.sort.BinaryInsertSort;
 import cn.edu.tju.rico.sort.BubbleSort;
+import cn.edu.tju.rico.sort.HeapSort;
 import cn.edu.tju.rico.sort.MergeSort;
 import cn.edu.tju.rico.sort.QuickSort;
 import cn.edu.tju.rico.sort.RadixSort;
@@ -73,5 +75,19 @@ public class SortTest {
 		System.out.println("原数组 ： " + Arrays.toString(target9));
 		RadixSort.radixSort(target9,10,2,target9.length);
 		System.out.println(Arrays.toString(target9));
+		
+		System.out.println("\n----------------------\n");
+		System.out.println("堆排序 ： ");
+		int[] target10 = { 21, 25, 49, 25, 16, 18, 31, 41 };
+		System.out.println("原数组 ： " + Arrays.toString(target10));
+		HeapSort.heapSort(target10);
+		System.out.println(Arrays.toString(target10));
+		
+		System.out.println("\n----------------------\n");
+		System.out.println("折半插入排序 ： ");
+		int[] target11 = { 21, 25, 49, 25, 16, 18, 31, 41, 21, 9 };
+		System.out.println("原数组 ： " + Arrays.toString(target11));
+		BinaryInsertSort.binaryInsertSort(target11);
+		System.out.println(Arrays.toString(target11));
 	}
 }

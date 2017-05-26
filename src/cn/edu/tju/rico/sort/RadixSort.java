@@ -52,7 +52,7 @@ public class RadixSort {
 					}
 					count[j] = 0;  // 计数器归零
 				}
-				divisor *= 10;  //用于获取元素对应位数字
+				divisor *= 10;  	//用于获取元素对应位数字
 			}
 		}
 		return target;
