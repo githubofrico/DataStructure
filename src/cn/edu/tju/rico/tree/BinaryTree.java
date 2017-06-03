@@ -132,6 +132,60 @@ public class BinaryTree<E> {
 			node = null; // node链入后，置空
 		}
 	}
+	
+	/**
+	 * @description 根据广义表表达式创建树
+	 * @author rico
+	 * @created 2017年5月22日 下午3:16:01
+	 * @param exp 广义表
+	 */
+	public static Node createBinaryTree(String exp, Node root) {
+		LinkedList<Node> stack = new LinkedList<Node>(); // 辅助栈
+		Node node = null; // 新结点
+		Node temp = null; // 用于入栈
+		Node parent = null; // 父亲结点
+		boolean flag = false; // true 表示链入到父结点的左孩子位置，false表示链入父结点的右孩子位置
+
+		for (int i = 0; i < exp.length(); i++) { // 逐个读入表达式的各个字符
+			char c = exp.charAt(i);
+			switch (c) {
+			case '(': // 当前节点有孩子节点，入栈以便设置其孩子
+				stack.push(temp);
+				flag = true;
+				break;
+			case ')': // 设置好了栈顶节点的孩子，出栈
+				stack.pop();
+				break;
+			case ',': // 当前节点无孩子，不需要设置其孩子节点，因此不需要入栈
+				flag = false;
+				break;
+			default: // 创建根据内容创建节点
+				node = new Node(c);
+				break;
+			}
+
+			// 若树不存在，则创建树的根结点
+			if (root == null) {
+				root = node;
+			}
+
+			// 为栈顶节点链入子女
+			if (!stack.isEmpty()) {
+				if (node != null) { // 当读入的是'('、')'、','字符时，略过
+					parent = stack.peek();
+					if (flag) {
+						parent.left = node;
+					} else {
+						parent.right = node;
+					}
+				}
+			}
+
+			temp = node; // 用于入栈
+			node = null; // node链入后，置空
+		}
+		return root;
+	}
 
 	/**
 	 * @description 广序/层次遍历，工作队列
