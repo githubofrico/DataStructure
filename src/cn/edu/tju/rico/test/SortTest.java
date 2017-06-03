@@ -57,7 +57,7 @@ public class SortTest {
 		
 		System.out.println("\n----------------------\n");
 		System.out.println("Ï£¶ûÅÅÐò £º ");
-		int[] target7 = { 21, 25, 49, 25, 16, 8, 31, 41 };
+		int[] target7 = { 21, 25, 49, 25, 16, 8, 31, 41,1,16 };
 		System.out.println("Ô­Êý×é £º " + Arrays.toString(target7));
 		ShellSort.shellSort(target7);
 		System.out.println(Arrays.toString(target7));
