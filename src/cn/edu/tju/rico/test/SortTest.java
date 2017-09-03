@@ -45,7 +45,7 @@ public class SortTest {
 		System.out.println("归并排序 ： ");
 		int[] target5 = { 21, 25, 49, 25, 16, 8, 31, 41 };
 		System.out.println("原数组 ： " + Arrays.toString(target5));
-		MergeSort.mergeSort(target5, 0, target5.length - 1);
+		MergeSort.mergeSort(target5);
 		System.out.println(Arrays.toString(target5));
 
 		System.out.println("\n----------------------\n");

@@ -179,7 +179,42 @@ public class LinkedList<E> {
 		}
 		head.next = pre; // 将原链表的头结点指向反转后的链表
 	}
-
+ 
+//	public void ReverseList() {
+//		Node<E> head1 = head.next;
+//		if (head1 != null && head1.next != null) {
+//			Node<E> p1 = head1;
+//			Node<E> p2 = p1.next;
+//			while(p2 != null){
+//				Node<E> tmp = p2.next;
+//				p2.next = p1;
+//				if (p1 == head1) {
+//					p1.next = null;
+//				}
+//				p1 = p2;
+//				p2 = tmp;
+//			}
+//			
+//			head.next = p1;
+//		}
+//	}
+	
+//	public void ReverseList1() {
+//		java.util.LinkedList<E> stack = new java.util.LinkedList<E>();
+//		Node<E> head1 = head.next;
+//		Node<E> cur = head1;
+//		while(cur != null){
+//			stack.push(cur.data);
+//			cur = cur.next;
+//		}
+//		
+//		cur = head1;
+//		while (cur!= null) {
+//			cur.data = stack.pop();
+//			cur = cur.next;
+//		}
+//    }
+	
 	/**
 	 * @description 判断单链表是否为空
 	 * @author rico

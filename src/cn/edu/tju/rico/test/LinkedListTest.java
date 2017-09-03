@@ -40,31 +40,35 @@ public class LinkedListTest {
 		list1.print();
 		list1.reverseLinkedList();
 		list1.print();
+//		list1.ReverseList();
+//		list1.print();
+//		list1.ReverseList1();
+//		list1.print();
 		System.out.println();
 		
-		System.out.println("倒序打印链表：");
-		list1.reversePrint(list1.getHead());
-		System.out.println();
-		System.out.println();
-		
-		System.out.println("打印链表中间节点：");
-		list1.printMiddleNodes();
-		System.out.println();
-		
-		
-		LinkedList<String> list2 = new LinkedList<String>();
-		list2.add("书呆子");
-		list2.add(list1.getEndK(2));
-		System.out.println("判断两链表是否相交：");
-		list1.print();
-		list2.print();
-		System.out.println(list1.size() + " : " + list2.size());
-		System.out.println("是否相交 : " + list1.isIntersect(list2));
-		System.out.println("交点是 ： " + list1.getIntersectionPoint(list2));
-		System.out.println();
-		
-		list1.deleteNodeWithoutHead(list1.getEndK(2));
-		System.out.println("打印删除特定节点后的链表：");
-		list1.print();
+//		System.out.println("倒序打印链表：");
+//		list1.reversePrint(list1.getHead());
+//		System.out.println();
+//		System.out.println();
+//		
+//		System.out.println("打印链表中间节点：");
+//		list1.printMiddleNodes();
+//		System.out.println();
+//		
+//		
+//		LinkedList<String> list2 = new LinkedList<String>();
+//		list2.add("书呆子");
+//		list2.add(list1.getEndK(2));
+//		System.out.println("判断两链表是否相交：");
+//		list1.print();
+//		list2.print();
+//		System.out.println(list1.size() + " : " + list2.size());
+//		System.out.println("是否相交 : " + list1.isIntersect(list2));
+//		System.out.println("交点是 ： " + list1.getIntersectionPoint(list2));
+//		System.out.println();
+//		
+//		list1.deleteNodeWithoutHead(list1.getEndK(2));
+//		System.out.println("打印删除特定节点后的链表：");
+//		list1.print();
 	}
 }

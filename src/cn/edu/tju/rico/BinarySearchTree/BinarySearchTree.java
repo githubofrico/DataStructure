@@ -1,5 +1,17 @@
 package cn.edu.tju.rico.BinarySearchTree;
 
+/**        
+ * Title: 二叉搜索树的数据结构及其算法    
+ * Description: 二叉搜索树或者是一颗空树，或者具有以下性质，
+ * 		所有节点的关键码互不相同，即唯一；
+ * 		左子树上所有节点都小于父结点，右子树上所有节点都大于父结点
+ * 		左子树、右子树都是二叉搜索树
+ * 
+ * 二叉搜索树的插入、搜索、删除节点的时间复杂度均为O(lgn)
+ * 
+ * @author rico       
+ * @created 2017年6月4日 上午9:51:16    
+ */      
 public class BinarySearchTree {
 
 	private TreeNode root;
@@ -62,10 +74,11 @@ public class BinarySearchTree {
 	 * @return
 	 */
 	public TreeNode insert(int target, TreeNode node) {
-		if (search(target, node) == null) {
-			if (node == null) {
+		if (search(target, node) == null) {   // 先检查元素是否已经存在
+			if (node == null) {  // 创建插入结点
 				return new TreeNode(target);
 			} else {
+				// 寻找插入点并插入
 				if (target < node.data) {
 					node.left = insert(target, node.left);
 				} else {
@@ -77,7 +90,7 @@ public class BinarySearchTree {
 	}
 
 	/**
-	 * @description 删除搜索二叉树的制定结点
+	 * @description 删除搜索二叉树的指定结点
 	 * @author rico
 	 * @created 2017年6月3日 下午8:43:29
 	 * @param target
@@ -103,7 +116,7 @@ public class BinarySearchTree {
 
 				// 删除待删除结点右子树上补位结点
 				node.right = remove(node.data, node.right);
-			} else {
+			} else {   // 待删除结点的左子树或右子树至少有一个为空，递归的终止条件
 				if (node.left == null) {
 					node = node.right;
 				} else {
@@ -123,7 +136,7 @@ public class BinarySearchTree {
 	public void inOrder(TreeNode node) {
 		if (node != null) {
 			inOrder(node.left);
-			System.out.print(root.data + " ");
+			System.out.print(node.data + " ");
 			inOrder(node.right);
 		}
 	}

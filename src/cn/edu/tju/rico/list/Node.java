@@ -9,7 +9,7 @@ package cn.edu.tju.rico.list;
  */
  public class Node<T> {
 	//包可见性
-	Node<T> next;   
+	public Node<T> next;   
 	T data;
 
 	/**

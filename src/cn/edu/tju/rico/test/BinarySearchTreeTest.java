@@ -11,6 +11,7 @@ public class BinarySearchTreeTest {
 		tree.inOrder(tree.getRoot());
 		System.out.println();
 		System.out.println("\n------------------------\n");
+		
 		System.out.println("打印二叉搜索树：");
 		tree.printTree(tree.getRoot());
 		System.out.println();
@@ -27,7 +28,7 @@ public class BinarySearchTreeTest {
 		System.out.println("\n------------------------\n");
 		
 		System.out.println("向二叉搜索树删除目标值：");
-		tree.remove(78, tree.getRoot());
+		tree.remove(10, tree.getRoot());
 		tree.printTree(tree.getRoot());
 		System.out.println();
 		System.out.println("\n------------------------\n");

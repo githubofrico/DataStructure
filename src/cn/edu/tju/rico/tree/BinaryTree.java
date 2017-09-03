@@ -211,7 +211,7 @@ public class BinaryTree<E> {
 		}
 		return sb.toString().trim();
 	}
-
+	
 	/**
 	 * @description 前序遍历(递归)
 	 * @author rico
@@ -221,12 +221,14 @@ public class BinaryTree<E> {
 	 */
 	public String preOrder(Node<E> root) {
 		StringBuilder sb = new StringBuilder(); // 存到递归调用栈
-		if (root != null) { // 递归终止条件
+		if (root == null) {
+			return "";
+		}else { // 递归终止条件
 			sb.append(root.data + " "); // 前序遍历当前结点
 			sb.append(preOrder(root.left)); // 前序遍历左子树
 			sb.append(preOrder(root.right)); // 前序遍历右子树
-		}
-		return sb.toString();
+			return sb.toString();
+		}		
 	}
 
 	/**
@@ -351,17 +353,18 @@ public class BinaryTree<E> {
 	 * @return
 	 */
 	public Node<E> createBinaryTreeByPreAndIn(String pre, String in) {
-		if (pre.length() > 0) {
+		if (pre.length() <= 0) {   // 递归终止条件
+			return null;     // 简单情景
+		}else{          
 			Node<E> root = new Node(pre.charAt(0));
 			int index = in.indexOf(pre.charAt(0));
 			root.left = createBinaryTreeByPreAndIn(pre.substring(1, index + 1),
-					in.substring(0, index));
+					in.substring(0, index)); 	   // 重复逻辑，缩小范围
 			root.right = createBinaryTreeByPreAndIn(
 					pre.substring(index + 1, pre.length()),
-					in.substring(index + 1, in.length()));
+					in.substring(index + 1, in.length())); 	   // 重复逻辑，缩小范围
 			return root;
 		}
-		return null;
 	}
 
 	/**
@@ -371,20 +374,22 @@ public class BinaryTree<E> {
 	 * @return
 	 */
 	public Node<E> createBinaryTreeByInAndPost(String in, String post) {
-		if (post.length() > 0) {
+		if (post.length() <= 0) {   //递归终止条件
+			return null;    // 简单情景
+		}else{  
 			Node<E> root = new Node(post.charAt(post.length() - 1));
 			int index = in.indexOf(post.charAt(post.length() - 1));
-
+			
 			root.left = createBinaryTreeByInAndPost(in.substring(0, index),
-					post.substring(0, index));
+					post.substring(0, index));  // 		重复逻辑，缩小范围
+			
 			root.right = createBinaryTreeByInAndPost(
 					in.substring(index + 1, in.length()),
-					post.substring(index, post.length() - 1));
+					post.substring(index, post.length() - 1));  	// 重复逻辑，缩小范围
 			return root;
 		}
-		return null;
 	}
-
+	
 	/**
 	 * @description 根据原树的根结点复制出一颗一模一样的树
 	 * @author rico

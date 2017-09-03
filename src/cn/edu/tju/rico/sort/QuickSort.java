@@ -83,4 +83,9 @@ public class QuickSort {
 		
 		return base_index;  //返回划分后基准元素的位置
 	}
+	
+	public static void main(String[] args) {
+		int array[] = {17,8,3,25,17,1,13,19,18,4,6,24};
+		QuickSort.quickSort(array, 0, array.length-1);
+	}
 }

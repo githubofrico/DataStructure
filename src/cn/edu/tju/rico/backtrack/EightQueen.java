@@ -1,6 +1,5 @@
 package cn.edu.tju.rico.backtrack;
 
-import java.util.Arrays;
 import java.util.Date;
 
 /**
